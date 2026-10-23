@@ -68,9 +68,11 @@ examples/example/DivideStrategy.java  Fourth algorithm, extension example
 examples/example/DivisionDemo.java    New client for the extension
 tests/tests/CalculatorTest.java       Standalone regression suite
 tests/verify_cli.py                   Optional Python 3 CLI verification
+docs/strategy.png                     UML diagram image
 docs/strategy.mmd                     Editable Mermaid UML source
 docs/DEFENSE.md                       Design walkthrough and practice questions
 REPORT.md                            Required Markdown reflection and UML
+REPORT.docx                          Word report with embedded UML image
 VERIFICATION.txt                     Actual local verification output
 run.ps1                              Windows build/run helper
 ```
@@ -91,12 +93,8 @@ The Java suite covers arithmetic, same-object switching, extension, null rejecti
 python tests/verify_cli.py --java "$env:JAVA_HOME\bin\java.exe"
 ```
 
-Inspect the incremental local commits with `git log --oneline`. The submission ZIP includes a Git bundle so its history can be restored without shipping a `.git` folder:
-
-```text
-git clone strategy-history.bundle restored-project
-```
+Inspect the incremental local commits with `git log --oneline`. History is stored in the project's `.git` folder. No submission ZIP is generated.
 
 ## Submission status
 
-The local project and Markdown report are prepared. The GitHub repository has not been published, and no repository URL is invented. After publication, replace the pending status in section 6 of `REPORT.md` with the actual repository link and regenerate the ZIP. Review the implementation and reflection before submission and practice the defense using `docs/DEFENSE.md`.
+The local project and Markdown report are prepared. The GitHub repository has not been published, and no repository URL is invented. After publication, replace the pending status in section 6 of `REPORT.md` with the actual repository link and update both report formats. Review the implementation and reflection before submission and practice the defense using `docs/DEFENSE.md`.

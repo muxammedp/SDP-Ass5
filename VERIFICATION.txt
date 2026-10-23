@@ -56,3 +56,9 @@ PASS: context has no concrete strategy dependency or type branching
 PASS: Java source contains no comments
 PASS: all 9 class files target Java 17 (major version 61)
 PASS: all six required report sections present
+
+Documentation update - 2026-10-23
+PASS: docs/strategy.png contains the eight UML classes and was visually reviewed
+PASS: REPORT.docx contains student details, all six report sections, and the matching embedded UML image
+PASS: final DOCX rendered through Microsoft Word to four pages; all four page images visually inspected
+PASS: submission ZIP removed at user request; no new submission archive created

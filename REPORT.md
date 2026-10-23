@@ -16,50 +16,9 @@ One context is reused while its strategy changes at runtime. With operands 12 an
 
 ## 2. UML class diagram
 
-```mermaid
-classDiagram
-    direction LR
-    class OperationStrategy {
-        <<interface>>
-        +execute(BigDecimal left, BigDecimal right) BigDecimal
-    }
-    class Calculator {
-        -OperationStrategy strategy
-        +Calculator(OperationStrategy strategy)
-        +setStrategy(OperationStrategy strategy) void
-        +calculate(BigDecimal left, BigDecimal right) BigDecimal
-    }
-    class AddStrategy {
-        +execute(BigDecimal left, BigDecimal right) BigDecimal
-    }
-    class SubtractStrategy {
-        +execute(BigDecimal left, BigDecimal right) BigDecimal
-    }
-    class MultiplyStrategy {
-        +execute(BigDecimal left, BigDecimal right) BigDecimal
-    }
-    class DivideStrategy {
-        +execute(BigDecimal left, BigDecimal right) BigDecimal
-    }
-    class Main {
-        +main(String[] args) void
-    }
-    class DivisionDemo {
-        +main(String[] args) void
-    }
-    Calculator --> OperationStrategy : delegates to
-    OperationStrategy <|.. AddStrategy
-    OperationStrategy <|.. SubtractStrategy
-    OperationStrategy <|.. MultiplyStrategy
-    OperationStrategy <|.. DivideStrategy
-    Main ..> Calculator : configures
-    Main ..> AddStrategy : creates
-    Main ..> SubtractStrategy : creates
-    Main ..> MultiplyStrategy : creates
-    DivisionDemo ..> Calculator : configures
-    DivisionDemo ..> AddStrategy : creates
-    DivisionDemo ..> DivideStrategy : creates
-```
+![Strategy Pattern UML class diagram](docs/strategy.png)
+
+[Open the full-resolution PNG](docs/strategy.png) | [Editable Mermaid source](docs/strategy.mmd)
 
 `Main` is the original client, `Calculator` is the context, and `OperationStrategy` is the common abstraction. Dashed realization arrows show interface implementations. `Calculator` holds one strategy reference; it does not own the strategies' lifetimes. `DivideStrategy` and `DivisionDemo` belong to the separate extension example. The editable diagram is also saved in `docs/strategy.mmd`.
 
@@ -134,7 +93,7 @@ Verification on JDK 17 passed 23 Java checks covering arithmetic, runtime switch
 
 ## 6. GitHub repository
 
-**Pending publication.** A local Git repository with incremental implementation, extension, and documentation commits is included through `strategy-history.bundle` in the project ZIP. Replace this paragraph with the verified GitHub repository URL after publication. The local folder and bundle are not substitutes for the required GitHub link.
+**Pending publication.** The project folder contains a local Git repository with incremental implementation, extension, and documentation commits. Replace this paragraph with the verified GitHub repository URL after publication. The local folder is not a substitute for the required GitHub link.
 
 ### References and preparation disclosure
 
