@@ -1,0 +1,42 @@
+classDiagram
+    direction LR
+    class OperationStrategy {
+        <<interface>>
+        +execute(BigDecimal left, BigDecimal right) BigDecimal
+    }
+    class Calculator {
+        -OperationStrategy strategy
+        +Calculator(OperationStrategy strategy)
+        +setStrategy(OperationStrategy strategy) void
+        +calculate(BigDecimal left, BigDecimal right) BigDecimal
+    }
+    class AddStrategy {
+        +execute(BigDecimal left, BigDecimal right) BigDecimal
+    }
+    class SubtractStrategy {
+        +execute(BigDecimal left, BigDecimal right) BigDecimal
+    }
+    class MultiplyStrategy {
+        +execute(BigDecimal left, BigDecimal right) BigDecimal
+    }
+    class DivideStrategy {
+        +execute(BigDecimal left, BigDecimal right) BigDecimal
+    }
+    class Main {
+        +main(String[] args) void
+    }
+    class DivisionDemo {
+        +main(String[] args) void
+    }
+    Calculator --> OperationStrategy : delegates to
+    OperationStrategy <|.. AddStrategy
+    OperationStrategy <|.. SubtractStrategy
+    OperationStrategy <|.. MultiplyStrategy
+    OperationStrategy <|.. DivideStrategy
+    Main ..> Calculator : configures
+    Main ..> AddStrategy : creates
+    Main ..> SubtractStrategy : creates
+    Main ..> MultiplyStrategy : creates
+    DivisionDemo ..> Calculator : configures
+    DivisionDemo ..> AddStrategy : creates
+    DivisionDemo ..> DivideStrategy : creates

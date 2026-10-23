@@ -1,0 +1,58 @@
+﻿Assignment 5 Strategy Calculator - local verification
+Date: 2026-10-23
+Target: Java 17; compiler flags: --release 17 -encoding UTF-8 -Xlint:all -Werror
+javac 17.0.20.1
+PASS: addition
+PASS: exact decimal addition
+PASS: mixed signs
+PASS: beyond long range
+PASS: runtime switch to subtraction
+PASS: operand order
+PASS: decimal subtraction
+PASS: runtime switch to multiplication
+PASS: zero
+PASS: negative multiplication
+PASS: two negatives
+PASS: switch back
+PASS: null constructor
+PASS: null replacement
+PASS: failed replacement preserves strategy
+PASS: null left operand
+PASS: null right operand
+PASS: unknown strategy delegates once with original operands
+PASS: extension division
+PASS: repeating division
+PASS: negative division
+PASS: division by zero
+PASS: usable after failed division
+SUMMARY: 23/23 PASS
+Strategy Calculator | Zhuman Mukhammed | SE-2522
+One Calculator object; strategies switch at runtime.
+add(12, 4) = 16
+subtract(12, 4) = 8
+multiply(12, 4) = 48
+Before switching: 16
+After switching to division: 3
+Same Calculator; no original class was modified.
+1 / 3 (DECIMAL64): 0.3333333333333333
+PASS: demo
+PASS: interactive runtime switching
+PASS: unknown command recovery
+PASS: malformed first operand recovery
+PASS: malformed second operand recovery
+PASS: whitespace and case
+PASS: blank operand
+PASS: non-finite number
+PASS: negative decimals
+PASS: EOF at command
+PASS: EOF at first operand
+PASS: EOF at second operand
+PASS: help
+PASS: unknown argument
+CLI SUMMARY: 14/14 PASS
+
+PASS: report UML matches standalone diagram
+PASS: context has no concrete strategy dependency or type branching
+PASS: Java source contains no comments
+PASS: all 9 class files target Java 17 (major version 61)
+PASS: all six required report sections present
