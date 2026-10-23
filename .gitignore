@@ -1,0 +1,7 @@
+out/
+.tools/
+.work/
+.idea/
+*.iml
+*.zip
+*.bundle
